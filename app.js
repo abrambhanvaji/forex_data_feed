@@ -26,13 +26,12 @@ app.get('/', function (req, res) {
       console.log(id);
 
       var json_obj = {
-        result: []
+        result: {
+          datetime,
+          symbol: id,
+          rate
+        }
       };
-      json_obj.result.push({
-        datetime,
-        symbol: id,
-        rate
-      });
       res.setHeader('Content-Type', 'application/json');
       res.send(JSON.stringify(json_obj));
     }
