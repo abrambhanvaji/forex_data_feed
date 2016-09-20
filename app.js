@@ -17,8 +17,10 @@ app.get('/', function (req, res) {
       console.log(rate);
       var id = symbol_1 + symbol_2;
       console.log(id);
-      var json_obj = {};
-      json_obj[id] = rate;
+      var json_obj = {
+        result: {}
+      };
+      json_obj.result[id] = rate;
       res.setHeader('Content-Type', 'application/json');
       res.send(JSON.stringify(json_obj));
     }
